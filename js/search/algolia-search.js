@@ -23,7 +23,7 @@ utils.jq(() => {
       $searchWrapper.removeClass('noresult');
       hits.forEach(function(hit) {
         var contentSnippet = hit._snippetResult.content.value;
-        var title = hit.hierarchy.lvl1 || 'Untitled';
+        var title = hit.title || 'Untitled';
         var $item = $("<li>").html(`<a href="${hit.url}"><span class='search-result-title'>${title}</span><p class="search-result-content">${contentSnippet}</p></a>`);
         $resultList.append($item);
       });
